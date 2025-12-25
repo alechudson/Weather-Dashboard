@@ -53,11 +53,21 @@ A clean and modern weather dashboard featuring interactive charts and a responsi
 
 ```
 Weather-Dashboard/
-├── index.html          # Main HTML structure
-├── styles.css          # Styling and responsive design
-├── app.js             # JavaScript logic and mock data
-├── README.md          # Project documentation
-└── LICENSE            # GPL-3.0 License
+├── index.html                  # Main HTML structure
+├── styles.css                  # Styling and responsive design
+├── app.js                      # JavaScript with mock data (current)
+├── app-with-api.js            # JavaScript with real API integration
+├── netlify.toml               # Netlify configuration
+├── netlify/
+│   └── functions/
+│       ├── weather.js         # Serverless function for current weather
+│       └── forecast.js        # Serverless function for forecast
+├── .env.example               # Environment variable template
+├── .gitignore                 # Git ignore file (protects .env)
+├── API_SECURITY.md            # API key security guide
+├── DEPLOYMENT.md              # Deployment instructions
+├── README.md                  # Project documentation
+└── LICENSE                    # GPL-3.0 License
 ```
 
 ## Current Implementation
@@ -70,9 +80,27 @@ The dashboard currently uses **mock data** to demonstrate functionality. This al
 - Hourly temperature data
 - Weather statistics (humidity, wind, pressure, UV index)
 
+## 🔐 Adding Real Weather Data
+
+Ready to use real weather data? See our comprehensive guides:
+
+- **[API Security Guide](API_SECURITY.md)** - Learn how to protect your API key
+- **[Deployment Guide](DEPLOYMENT.md)** - Step-by-step deployment instructions
+
+### Quick Start with Netlify (Recommended)
+
+The project includes Netlify serverless functions that keep your API key secure:
+
+1. Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
+2. Deploy to Netlify (free)
+3. Add your API key as an environment variable
+4. Your dashboard is live with real weather data!
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+
 ## Future Enhancements
 
-- [ ] Integration with real weather API (OpenWeatherMap, WeatherAPI, etc.)
+- [x] Serverless function integration for API security
 - [ ] Location search functionality
 - [ ] Geolocation support for automatic location detection
 - [ ] Weather alerts and warnings
